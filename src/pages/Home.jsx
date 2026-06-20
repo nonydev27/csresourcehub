@@ -14,7 +14,7 @@ const FEATURES = [
   {
     icon: '📚',
     title: 'Curated Resources',
-    desc: 'Every course has handpicked links — free courses, textbooks, YouTube playlists, and practice sites.',
+    desc: 'Every course has handpicked links, free courses, textbooks, YouTube playlists, and practice sites.',
   },
   {
     icon: '🗓️',
@@ -24,12 +24,12 @@ const FEATURES = [
   {
     icon: '💡',
     title: 'Tips from Experience',
-    desc: 'Real advice for surviving each year — what to focus on, what to avoid, and how to study smart.',
+    desc: 'Real advice for surviving each year. What to focus on, what to avoid, and how to study smart.',
   },
   {
     icon: '🆓',
     title: 'Always Free',
-    desc: 'No paywalls. No sign-ups. Just open knowledge — the way it should be.',
+    desc: 'No paywalls. No sign-ups. Just open knowledge the way it should be.',
   },
 ]
 
@@ -96,7 +96,7 @@ export default function Home({ onNavigate }) {
           {/* Stat pills */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-14">
             {[
-              { value: '8', label: 'Courses covered' },
+              { value: '12+', label: 'Courses covered' },
               { value: '4', label: 'CS years' },
               { value: '4', label: 'IT years' },
               { value: '∞', label: 'Free resources' },
