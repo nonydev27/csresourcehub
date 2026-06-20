@@ -101,7 +101,7 @@ export default function App() {
      * bg-slate-950  → Very dark background (the "coding" dark theme)
      * text-slate-100 → Default text colour (light, readable on dark bg)
      */
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-[#F8F5ED] text-[#0C1A4E]">
       {/* Navigation bar — always at the top */}
       <Navbar currentPage={currentPage} onNavigate={navigate} />
 

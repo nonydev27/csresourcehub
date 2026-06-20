@@ -1,22 +1,16 @@
-/**
- * CourseCard.jsx — A card that previews a single course
- *
- * Props:
- *   course   — the course object from courses.js
- *   onClick  — function to call when the user clicks the card
- */
+import { motion } from 'framer-motion'
 
 export default function CourseCard({ course, onClick }) {
   return (
-    <button
+    <motion.button
       onClick={onClick}
+      whileHover={{ y: -6, boxShadow: '0 16px 40px rgba(17,46,129,0.13)' }}
+      whileTap={{ scale: 0.98 }}
       className={`
-        group w-full text-left rounded-2xl border bg-slate-900/50
+        group w-full text-left rounded-2xl border bg-white
         ${course.cardBorder}
-        ${course.cardGlow}
-        p-6 transition-all duration-300
-        hover:bg-slate-900 hover:shadow-xl hover:-translate-y-0.5
-        focus:outline-none focus:ring-2 focus:ring-emerald-500/50
+        p-6 transition-colors duration-200
+        focus:outline-none focus:ring-2 focus:ring-[#FFBF00]/50
       `}
     >
       {/* ── Card Header ────────────────────────────────────────────────── */}
@@ -24,16 +18,16 @@ export default function CourseCard({ course, onClick }) {
         <span className="text-white text-xs font-bold font-mono tracking-wider">
           {course.shortCode}
         </span>
-        <span className="text-white/70 text-xs">Year {course.year}</span>
+        <span className="text-white/80 text-xs">Year {course.year}</span>
       </div>
 
       {/* ── Course Name ────────────────────────────────────────────────── */}
-      <h3 className={`font-bold text-slate-100 text-lg mb-2 group-hover:${course.accentText} transition-colors`}>
+      <h3 className={`font-bold text-[#0C1A4E] text-lg mb-2 group-hover:${course.accentText} transition-colors`}>
         {course.name}
       </h3>
 
-      {/* ── Description preview (truncated) ───────────────────────────── */}
-      <p className="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-4">
+      {/* ── Description preview ───────────────────────────────────────── */}
+      <p className="text-[#4A5580] text-sm leading-relaxed line-clamp-2 mb-4">
         {course.description}
       </p>
 
@@ -50,7 +44,6 @@ export default function CourseCard({ course, onClick }) {
       {/* ── CTA ────────────────────────────────────────────────────────── */}
       <div className={`flex items-center gap-1.5 text-sm font-medium ${course.accentText}`}>
         <span>View resources</span>
-        {/* Arrow icon */}
         <svg
           className="w-4 h-4 transition-transform group-hover:translate-x-1"
           fill="none"
@@ -60,6 +53,6 @@ export default function CourseCard({ course, onClick }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
       </div>
-    </button>
+    </motion.button>
   )
 }

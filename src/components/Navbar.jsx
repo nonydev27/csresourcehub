@@ -1,15 +1,6 @@
-/**
- * Navbar.jsx — Top navigation bar
- *
- * This component appears at the top of every page.
- * It receives:
- *   currentPage  — which page is active right now (used to highlight the active link)
- *   onNavigate   — a function to call when the user clicks a link
- */
-
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
-// The list of nav links. Each item has a display label and a page id.
 const NAV_LINKS = [
   { label: 'Home', page: 'home' },
   { label: 'Courses', page: 'courses' },
@@ -17,108 +8,128 @@ const NAV_LINKS = [
 ]
 
 export default function Navbar({ currentPage, onNavigate }) {
-  // Controls whether the mobile menu is open or closed
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleNav = (page) => {
     onNavigate(page)
-    setMenuOpen(false) // close mobile menu after clicking
+    setMenuOpen(false)
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+    <motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E2D9C0] shadow-sm"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* ── Logo ─────────────────────────────────────────────────── */}
-          <button
+          <motion.button
             onClick={() => handleNav('home')}
             className="flex items-center gap-2 group"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
           >
-            {/* Terminal icon */}
-            <div className="w-8 h-8 rounded bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
-              <span className="text-emerald-400 text-xs font-mono font-bold">{'>'}_</span>
+            <div className="w-8 h-8 rounded bg-[#112E81]/10 border border-[#112E81]/30 flex items-center justify-center">
+              <span className="text-[#112E81] text-xs font-mono font-bold">{'>'}_</span>
             </div>
-            <span className="font-bold text-slate-100 group-hover:text-emerald-400 transition-colors">
-              CS<span className="text-emerald-400">Resource</span>Hub
+            <span className="font-bold text-[#112E81] group-hover:text-[#1E3A9A] transition-colors">
+              CS<span className="text-[#FFBF00]">Resource</span>Hub
             </span>
-          </button>
+          </motion.button>
 
           {/* ── Desktop Nav Links ─────────────────────────────────────── */}
           <div className="hidden md:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
-              <button
+              <motion.button
                 key={link.page}
                 onClick={() => handleNav(link.page)}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   currentPage === link.page
-                    ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800'
+                    ? 'bg-[#FFBF00]/20 text-[#112E81] border border-[#FFBF00]/50'
+                    : 'text-[#4A5580] hover:text-[#112E81] hover:bg-[#EEF2FF]'
                 }`}
               >
                 {link.label}
-              </button>
+              </motion.button>
             ))}
 
-            {/* Donate button — styled differently to stand out */}
-            <button
+            <motion.button
               onClick={() => handleNav('donate')}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
               className={`ml-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 currentPage === 'donate'
-                  ? 'bg-violet-500 text-white'
-                  : 'bg-violet-500/15 text-violet-400 border border-violet-500/30 hover:bg-violet-500 hover:text-white'
+                  ? 'bg-[#112E81] text-white'
+                  : 'bg-[#112E81] text-white hover:bg-[#1E3A9A]'
               }`}
             >
               Support Us
-            </button>
+            </motion.button>
           </div>
 
           {/* ── Mobile Menu Toggle ────────────────────────────────────── */}
           <button
-            className="md:hidden p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
+            className="md:hidden p-2 rounded-lg text-[#4A5580] hover:text-[#112E81] hover:bg-[#EEF2FF] transition-colors"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >
-            {/* Hamburger / X icon */}
-            {menuOpen ? (
-              // X icon
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              // Hamburger icon
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <motion.div
+              animate={{ rotate: menuOpen ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {menuOpen ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </motion.div>
           </button>
         </div>
       </div>
 
       {/* ── Mobile Dropdown Menu ──────────────────────────────────────── */}
-      {menuOpen && (
-        <div className="md:hidden border-t border-slate-800 bg-slate-950 px-4 py-3 space-y-1">
-          {NAV_LINKS.map((link) => (
-            <button
-              key={link.page}
-              onClick={() => handleNav(link.page)}
-              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                currentPage === link.page
-                  ? 'bg-emerald-500/15 text-emerald-400'
-                  : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800'
-              }`}
-            >
-              {link.label}
-            </button>
-          ))}
-          <button
-            onClick={() => handleNav('donate')}
-            className="w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium bg-violet-500/15 text-violet-400 hover:bg-violet-500 hover:text-white transition-colors"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="md:hidden border-t border-[#E2D9C0] bg-white overflow-hidden"
           >
-            Support Us
-          </button>
-        </div>
-      )}
-    </nav>
+            <div className="px-4 py-3 space-y-1">
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.page}
+                  onClick={() => handleNav(link.page)}
+                  className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                    currentPage === link.page
+                      ? 'bg-[#FFBF00]/20 text-[#112E81]'
+                      : 'text-[#4A5580] hover:text-[#112E81] hover:bg-[#EEF2FF]'
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ))}
+              <button
+                onClick={() => handleNav('donate')}
+                className="w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium bg-[#112E81] text-white hover:bg-[#1E3A9A] transition-colors"
+              >
+                Support Us
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   )
 }

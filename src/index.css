@@ -24,10 +24,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Apply the dark background at the document level so there's no flash of white */
+/* Light theme base */
 body {
-  background-color: #020617; /* matches Tailwind's slate-950 */
-  color: #f1f5f9;            /* matches Tailwind's slate-100 */
+  background-color: #F8F5ED;
+  color: #0C1A4E;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -46,18 +46,18 @@ body {
   overflow: hidden;
 }
 
-/* ── Scrollbar styling (dark theme) ─────────────────────────────────────── */
+/* ── Scrollbar styling (light theme) ────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a; /* slate-900 */
+  background: #F8F5ED;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155; /* slate-700 */
+  background: #C5B98A;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569; /* slate-600 */
+  background: #A8996A;
 }
