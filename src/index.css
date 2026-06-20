@@ -1,1 +1,63 @@
+/*
+ * index.css — Global styles
+ *
+ * Tailwind CSS v4 is imported here as a single line.
+ * All other styling is done with Tailwind utility classes
+ * directly in the JSX components.
+ *
+ * We only add custom CSS here for things that can't
+ * be done with Tailwind alone (e.g. font imports, global resets).
+ */
+
+/* ── Google Font: JetBrains Mono for code snippets ──────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+
 @import "tailwindcss";
+
+/* ── Base HTML reset ─────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Apply the dark background at the document level so there's no flash of white */
+body {
+  background-color: #020617; /* matches Tailwind's slate-950 */
+  color: #f1f5f9;            /* matches Tailwind's slate-100 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apply JetBrains Mono to all font-mono elements */
+.font-mono, code, pre {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* ── Custom line-clamp utility (for truncating text) ────────────────────── */
+/* Tailwind v4 includes line-clamp, but this is here as a fallback */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Scrollbar styling (dark theme) ─────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a; /* slate-900 */
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; /* slate-700 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; /* slate-600 */
+}
