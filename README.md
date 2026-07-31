@@ -5,7 +5,7 @@
 
 ---
 
-## 📊 Platform Impact & Reach
+## Platform Impact & Reach
 
 | Track / Section     | Year / Scope                 | Resource Coverage             | Active Viewers / Users              |
 | :------------------ | :--------------------------- | :---------------------------- | :---------------------------------- |
@@ -16,16 +16,16 @@
 
 ---
 
-## ⚡ What It Offers
+## What It Offers
 
-- 📚 **Curated Links:** Top-tier textbooks, YouTube playlists, and practice sites.
-- 🗓️ **Semester Maps:** Clear breakdown of topics for Semester 1 & 2.
-- 💡 **Field Advice:** Practical tips for surviving each year.
-- 🆓 **Zero Paywalls:** No accounts or sign-ups required.
+- **Curated Links:** Top-tier textbooks, YouTube playlists, and practice sites.
+- **Semester Maps:** Clear breakdown of topics for Semester 1 & 2.
+- **Field Advice:** Practical tips for surviving each year.
+- **Zero Paywalls:** No accounts or sign-ups required.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **React** • **Vite** • **Tailwind CSS** • **JavaScript**
 
