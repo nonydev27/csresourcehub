@@ -1,4 +1,4 @@
-# CSResourceHub 🎓💻
+# CSResourceHub
 
 > **Open source. Free forever.**  
 > _A student-built guide to navigating CS & IT degrees with hand-picked free resources._
