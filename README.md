@@ -1,16 +1,82 @@
-# React + Vite
+# CSResourceHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Home**
+- **Courses**
+- **About**
+- **Support Us**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Free Resources
 
-## React Compiler
+### The Best Links, All in One Place
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Harvard CS50, LeetCode, Abdul Bari, freeCodeCamp — hand-picked for every course and every year.
 
-## Expanding the ESLint configuration
+[Explore Courses →](#courses) | [Learn More](#what-you-get)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## What you get
+
+### Everything you need, nothing you don't
+
+This hub was built to fill the gaps that lectures don't always cover.
+
+- **📚 Curated Resources:** Every course has handpicked links, free courses, textbooks, YouTube playlists, and practice sites.
+- **🗓️ Semester Breakdown:** Topics split by Semester 1 and Semester 2 so you always know exactly what to expect.
+- **💡 Tips from Experience:** Real advice for surviving each year. What to focus on, what to avoid, and how to study smart.
+- **🆓 Always Free:** No paywalls. No sign-ups. Just open knowledge the way it should be.
+
+---
+
+## Programme: Computer Science
+
+_[View all courses](#)_
+
+- **CS1 (Year 1):** Introduction to Computer Science
+- **CS2 (Year 2):** Data Structures & Algorithms
+- **CS3 (Year 3):** Software Engineering & Databases
+- **CS4 (Year 4):** Advanced Topics & Final Year Project
+
+## Programme: Information Technology
+
+_[View all courses](#)_
+
+- **IT1 (Year 1):** Introduction to Information Technology
+- **IT2 (Year 2):** Networking & Operating Systems
+- **IT3 (Year 3):** Web Development & Systems Administration
+- **IT4 (Year 4):** IT Management & Cybersecurity
+
+---
+
+## Find this useful?
+
+Consider supporting the hub so it stays free and continues to grow.
+
+[Support the Hub](#support-us)
+
+---
+
+# CSResourceHub
+
+A free guide to navigating your CS and IT degree — built by a student, for students.
+
+### Quick Links
+
+- Home
+- Courses
+- About
+- Support Us
+
+### Built With
+
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+
+Open source. Free forever.
+
+© 2026 CSResourceHub · Made with dedication by nonydev & mentees  
+`// knowledge is free`
